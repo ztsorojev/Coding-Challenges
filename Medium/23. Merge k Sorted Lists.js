@@ -22,6 +22,69 @@ Output: 1->1->2->3->4->4->5->6
  * @param {ListNode[]} lists
  * @return {ListNode}
 
+   SMARTER:
+    -> We can do essential Merge Sort on the list: continue "dividing" it in half and apply merge sort on 2 lists 
+       step by step until everything is sorted
+
+*/
+
+var mergeKLists = function(lists) {
+    if(!lists || lists.length <= 0) return null;
+
+    return doMergeKLists(lists, 0, lists.length-1);
+}
+
+var doMergeKLists = function(lists, left, right) {
+    //If we only have 1 element in lists
+    if(left === right) return lists[left];
+
+    let mid = Math.floor((right+left)/2);
+    let l1 = doMergeKLists(lists, left, mid);
+    let l2 = doMergeKLists(lists, mid+1, right);
+
+    return mergeTwoLists(l1,l2);
+}
+
+var mergeTwoLists = function(l1, l2) {
+    let result = new ListNode(-1); //the first node is not important, we will return result.next
+    let curr = result;
+    
+    while(l1 !== null && l2 !== null) {
+                
+        if(l1.val < l2.val) {
+            curr.next = l1;
+            l1 = l1.next;
+        } else {
+            curr.next = l2;
+            l2 = l2.next;
+        }
+        curr = curr.next;
+    }
+    curr.next = l1 || l2; //we take the one not null for rest of list!
+    
+    return result.next;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ *
     1. While lists is not empty (full of null elements)
         2. Find list with min current element
         3. Assign curr.next to this list
