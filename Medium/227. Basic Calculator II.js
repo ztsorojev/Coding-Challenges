@@ -31,6 +31,35 @@ Do not use the eval built-in library function.
     Space: O(n)
 
  */
+//Better version that below
+var calculate = function(s) {
+    
+    //Stack
+    let res = [];
+        
+    for(let i=0; i<s.length; i++) {
+        if(!isNaN(s[i]) && )
+        if(signs.charAt(i) == '+') {
+            res.push(terms[i]);
+            //console.log(res)
+        } else if(signs.charAt(i) == '-') {
+            res.push(-terms[i]);
+        } else if(signs.charAt(i) == '*') {
+            res.push(res.pop()*terms[i]);
+        } else if(signs.charAt(i) == '/') {
+            //let l = res.pop();
+            //let r = Math.floor(Math.abs(l / terms[i]));
+            //if(Math.sign(terms[i]) !== Math.sign(l)) r = '-' + r;   //we round it up because if negative, it will be wrong (e.g. -3/2 = -1.5 -> -2 but we need -1)
+            let r = parseInt(res.pop() / terms[i]);
+            res.push(r);
+        }
+    }
+    
+    return res.reduce((total, x) => total + parseInt(x),0);
+};
+
+/*********************************************/
+
 var calculate = function(s) {
 
     //Remove all spaces from s
