@@ -25,9 +25,44 @@ You may assume that you have an infinite number of each kind of coin.
  * @param {number} amount
  * @return {number}
  */
- //Recursion: Top-Down --> use memoization
- //Time: O(C * n), where C is number of coins and n is amount
- //Space: O(n), extra space for memoization
+//ITERATIVE APPROACH: bottom-up
+var coinChange = function(coins, amount) {
+    if(amount === 0) return 0;
+    if(coins.length <=0) return -1;
+
+    let dp = {};
+    dp[0] = 0;
+    
+    for(let i = 1; i<=amount; i++) {
+        let min = -1;
+        for(let coin of coins) {            
+            if(i - coin >= 0 && dp[i - coin] !== -1) {
+                let tmp = dp[i - coin] + 1;
+                min = (min < 0)? tmp : ((tmp < min)? tmp : min);
+           }       
+        }
+        dp[i] = min; 
+    }
+    return dp[amount];
+}
+
+//OTHER ITERATIVE APPROACH:
+var coinChange = function(coins, amount) {
+    let dp = new Array(amount+1);
+    dp[0] = 0;
+    let max = amount + 1;
+    for (let i=1; i<=amount; i++) {
+        dp[i] = max;  
+        coins.forEach(coin => {if(i-coin >= 0) dp[i] = Math.min(dp[i], dp[i-coin]+1)});
+    }
+    return dp[amount] === max ? -1 : dp[amount];
+};
+
+
+
+//RECURSION APPROACH: Top-Down --> use memoization
+//Time: O(C * n), where C is number of coins and n is amount
+//Space: O(n), extra space for memoization
 var coinChange = function(coins, amount) {
     
     if(amount < 1) return 0;
