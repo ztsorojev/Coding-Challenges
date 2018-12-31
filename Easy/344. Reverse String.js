@@ -15,3 +15,13 @@ var reverseString = function(s) {
     let reversed = s.split('').reverse().join('');
     return reversed;
 };
+
+//Other way (same complexity actually)
+var reverseString = function(s) {
+    if(!s || s==="") return "";
+    let reversed = "";
+    for(let i=s.length-1;i>=0;i--){
+        reversed += s[i];
+    }
+    return reversed;
+};
