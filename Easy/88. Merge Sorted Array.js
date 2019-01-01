@@ -19,7 +19,32 @@ Output: [1,2,2,3,5,6]
  * @param {number[]} nums2
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
+
+
+   SMARTER (no extra spce):
+        -> Start at the end where we have our empty space for nums1. 
+        -> Compare the last elements of nums1 and nums2, and start placing greatest at the end of array
+        -> still use 2 pointers, but we just decrease m and n
  */
+
+var merge = function(nums1, m, nums2, n) {
+    //we will use m and n as indexes
+    m--;
+    n--;
+
+    //we put sum to -1, because when n<0, we won't consider num2 anymore and we will only copy elements of nums1
+    while(m+n>=-1) {
+        if(nums1[m] >= nums2[n] || n<0) {
+            nums1[m+n+1] = nums1[m];
+            m--;
+        } else {
+            nums1[m+n+1] = nums2[n];
+            n--;
+        }
+    }
+}
+
+
 
 //Time: O(n) and Space: O(n)
 var merge = function(nums1, m, nums2, n) {
