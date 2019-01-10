@@ -14,7 +14,7 @@ Given binary tree [3,9,20,null,null,15,7],
   9  20
     /  \
    15   7
-   
+
 return its depth = 3.
 
 
@@ -29,6 +29,16 @@ return its depth = 3.
  * @param {TreeNode} root
  * @return {number}
  */
+//SMARTER: Recursion (that's essentially BFS but modified to choose path that goes deepest)
+//Check this for animation diagram: https://leetcode.com/problems/maximum-depth-of-binary-tree/solution/
+var maxDepth = function(root) {
+    if(!root) return 0;
+    
+    return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+    
+};
+
+
 var maxDepth = function(root) {
     if(!root) return 0;
     
