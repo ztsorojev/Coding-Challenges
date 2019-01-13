@@ -3,32 +3,69 @@
    						LINKED LISTS
 *****************************************************************/
 /* 
-
 INSERT: O(1)
 SEARCH: O(n)
-
 
 /*
  * Definition for SINGLY-linked list.
  */
-public class ListNode {
+public class Node {
     int val;
-    ListNode next;
-    ListNode(int x) { 
-    	val = x;
+    Node next;
+    public Node(int x) { 
+    	this.val = x;
     }
 }
 
+public class LinkedList {
+	Node head;
+
+	//Add element at the end of list
+	public void append(int data) {
+		if(head == null) {
+			head = new Node(data);
+			return;
+		}
+    	Node curent = head;
+    	while(current.next != null) {
+    		current = current.next;
+    	}
+    	current.next = new Node(data);
+    }
+
+    //Add element at the start of list
+    public void prepend(int data) {
+    	Node newHead = new Node(data);
+    	newHead.next = head;
+    	head = newHead;
+    }
+
+    public void deleteWithValue(int data) {
+    	if(head == null) return;
+    	if(head.val == data) head = head.next;
+
+    	Node current = head;
+    	while(current.next != null) {
+    		if(current.next.val == data) {
+    			current.next = current.next.next;
+    			return;
+    		}
+    		current = current.next;
+    	}
+    }
+
+}
+
 //Example
-ListNode list = new ListNode(2); //head of the list
-ListNode second = new ListNode(8);
-ListNode third = new ListNode(7);
-list.next = second;
-second.next = third;
+LinkedList list = new LinkedList();
+list.append(5);
+list.prepend(2);
 
 
-/************************
- * DOUBLY-linked list
+
+/************************************************
+/************************************************
+ * DOUBLY-linked list: native DS in Java
  */
 LinkedList<T> list = new LinkedList<T>();
 
@@ -49,7 +86,7 @@ push​(E e); 	// pushes an element onto the stack represented by this list
 int size = list.size();
 
 toArray​()	// returns an array containing all of the elements in this list in proper sequence (from first to last element).
-String[] listArr = list.toArray​();
+Object[] listArr = list.toArray​();
 
 //ADD -----------
 list.add("A");	
@@ -73,19 +110,20 @@ list.clear();	// removes all of the elements from this list
 
 
 /************************
- * IF WE WANT TO BUILD A DLL:
+ * IF WE WANT TO BUILD A DLL OURSELVES:
  * Class for Doubly Linked List
  */
 public class DLL { 
     Node head; // head of list 
   
-	class ListNode {
+  	//We define the class as private so that we can instantiate it in DLL class
+	private class Node {
 	    int val;
-	    ListNode prev;
-	    ListNode next;
+	    Node prev;
+	    Node next;
 
 	    // Constructor: next and prev are by default initialized as null 
-	    ListNode(int x) { 
+	    Node(int x) { 
 	    	val = x;
 	    }
 	}
