@@ -58,7 +58,7 @@ var dfs = function(grid, row, col) {
     dfs(grid, col, row-1);
 }
 
-//If we use BFS, Time: O(M.N) and Space: O(min(M,N)) because in worst case where the grid is filled with lands, the size of queue can grow up to min(M,NM,N).
+//If we use BFS, Time: O(M.N) and Space: O(min(M,N)) because in worst case where the grid is filled with lands, the size of queue can grow up to min(M,N).
 var bfs = function(grid, row, col) {
     let n_row = grid.length;
     let n_col = grid[0].length;
