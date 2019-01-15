@@ -70,7 +70,14 @@ for(Map.Entry<String, Integer> e : entries) {
 //getOrDefault(Object key, V defaultValue)
 int val = map.getOrDefault("bucket", 0);
 
+/***************************
+		ORDERED HASH
+		
+LinkedHashMap --> same thing as HashMap excepts that elements maintain order of insertion.
+LinkedHashMap extends the class HashMap, so it inherits all its methods.
+***************************/
 
+Map<K, V> map = new LinkedHashMap<>();
 
 /***************************
 		HASH SET
