@@ -24,3 +24,11 @@ Math.random()		//returns random float between 0 and 1 (not included)
 .length 	//can be used for int[], double[], String[] to know the length of the ARRAYS!
 
 .length() 	//can be used for String, StringBuilder, etc 
+
+
+
+/**************
+ * TYPE CAST
+ */
+
+int i = Integer.parseInt(str);		// Transfrom the String str into a primitive type int
