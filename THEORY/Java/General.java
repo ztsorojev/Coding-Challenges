@@ -32,3 +32,11 @@ Math.random()		//returns random float between 0 and 1 (not included)
  */
 
 int i = Integer.parseInt(str);		// Transfrom the String str into a primitive type int
+
+
+/**************
+ * COMPARAISON
+ */
+
+.equals() 	// tests for value equality: OBJECTS
+==			// tests for reference equality (or value equality of primitive types)
