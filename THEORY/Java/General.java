@@ -17,12 +17,24 @@ for (String i : cars) {
 }
 
 
+Arrays.asList(...)		// Transform an array into a List
+						// Examples: 
+						//		- List<Integer> l = Arrays.asList(1,2,3);
+
+						//		- Integer[] arr = {1,2,3};
+						//		  List<Integer> l = Arrays.asList(arr);
+
+
+/***************
+ * MATH
+ */
 Math.random()		//returns random float between 0 and 1 (not included)
 
+Integer.MAX_VALUE;
+Integer.MIN_VALUE;
 
 //LENGTH
 .length 	//can be used for int[], double[], String[] to know the length of the ARRAYS!
-
 .length() 	//can be used for String, StringBuilder, etc 
 
 
