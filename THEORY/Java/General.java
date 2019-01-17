@@ -17,6 +17,8 @@ for (String i : cars) {
 }
 
 
+int[] b = Arrays.copyOf(a, a.length);
+
 Arrays.asList(...)		// Transform an array into a List
 						// Examples: 
 						//		- List<Integer> l = Arrays.asList(1,2,3);
