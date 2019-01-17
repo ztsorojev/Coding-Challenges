@@ -2,8 +2,9 @@
  * ARRAYS
  */
 
-int[] num = new int[5]; 	//create empty array of 5 elements
-int[] myIntArray = {1,2,3}; //create array initialized with [1,2,3]
+int[] num = new int[5]; 				//create empty array of 5 elements
+int[] myIntArray = {1,2,3}; 			//create array initialized with [1,2,3]
+int[] myIntArray = new int[]{1,2,3};	//DONT put a number in [] when you initialize array!
 
 int[][] num = new int[5][2];
 int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
