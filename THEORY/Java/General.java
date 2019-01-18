@@ -18,7 +18,11 @@ for (String i : cars) {
 }
 
 
-int[] b = Arrays.copyOf(a, a.length);
+Arrays.copyOf(arr, len);	//len is the length of the copied array. If bigger than arr, the additional fields will be zeros.
+//Example:
+int[] a = {1,2,3};
+int[] b = Arrays.copyOf(a, a.length);	//b = [1,2,3]
+int[] c = Arrays.copyOf(a, 5);			//c = [1,2,3,0,0]
 
 Arrays.asList(...)		// Transform an array into a List
 						// Examples: 

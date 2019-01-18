@@ -9,15 +9,16 @@ class GraphNode {
 	}
 
 	void BFS(int s) {
+		GraphNode source = new GraphNode(s);
 		Queue<GraphNode> queue = new LinkedList<GraphNode>();
-		queue.add(s);
+		queue.add(source);
 
 		Set<GraphNode> visited = new HashSet<GraphNode>();
-		visited.add(s);
+		visited.add(source);
 
 		while(!queue.isEmpty()) {
 			GraphNode node = queue.poll();
-			System.out.print(s + " ");
+			System.out.print(node.label + " ");
 
 			for(GraphNode neighbor : node.neighbors) {
 				if(!visited.contains(neighbor)) {
@@ -29,15 +30,17 @@ class GraphNode {
 	}
 
 	void DFS(int s) {
+		GraphNode source = new GraphNode(s);
+		
 		Stack<GraphNode> stack = new Stack<GraphNode>();
-		stack.push(s);
+		stack.push(source);
 
 		Set<GraphNode> visited = new HashSet<GraphNode>();
-		visited.add(s);
+		visited.add(source);
 
 		while(!stack.isEmpty()) {
 			GraphNode node = stack.pop();
-			System.out.print(s + " ");
+			System.out.print(node.label  + " ");
 
 			for(GraphNode neighbor : node.neighbors) {
 				if(!visited.contains(neighbor)) {

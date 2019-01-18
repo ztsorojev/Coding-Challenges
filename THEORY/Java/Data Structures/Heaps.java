@@ -67,9 +67,9 @@ public class MinIntHeap {
 		int parentIndex = (index - 1)/2;
 
 		//while parent exists and parent out of order
-		while (parentIndex >= 0 && parent(index) > items[index]) {
-				swap(parentIndex, index);
-				index = parentIndex;
+		while (parentIndex >= 0 && items[parentIndex] > items[index]) {
+			swap(parentIndex, index);
+			index = parentIndex;
 		}
 	}
 

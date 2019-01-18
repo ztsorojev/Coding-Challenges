@@ -19,7 +19,8 @@ dictionary of words (such as a simple auto-complete functionality
 in a text box).
 
 Notes:
-	- In a trie, every node (except the root node) stores one character or a digit.
+	- In a trie, every node (EXCEPT THE ROOT NODE) stores one character or a digit.
+	- the root node is empty
 
 */
 
