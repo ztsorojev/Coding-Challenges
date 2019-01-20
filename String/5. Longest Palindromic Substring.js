@@ -13,9 +13,11 @@ Note: "aba" is also a valid answer.         |
  * @param {string} s
  * @return {string}
 
-    ------------------
-    SMARTER:
-    1. Consider each index as a center of a palindrom. In fact, there are 2n-1 possible centers and not n centers, because in "abba", the centers are both the "b".
+   ------------------
+   SMARTER:
+    1. Consider each index as a center of a palindrom. In fact, there are 2n-1 possible centers and not n centers, 
+       because the center of a palindrome can be in between two letters (e.g. Such palindromes have even number 
+       of letters (such as "abba") and its center are between the two 'b's.)
     2. Expand each center to left and right until you find max palindrom for this center.
     3. Repeat for all centers. Keep track of max length palindrom, start and end indexes.
     4. At the end, return substring.

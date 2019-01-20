@@ -18,6 +18,11 @@ for (String i : cars) {
 }
 
 
+.split(regex);		//same as in JS -> example: String[] arr = str.split("\\s");		--> This covers more cases than: str.split(" ");
+					//																	--> \s stands for whitespace, + tells to select all whitespaces
+					//							String ops[] = str.split("[a-z]")
+					//							String[] arrOfStr = str.split("for");
+
 Arrays.copyOf(arr, len);	//len is the length of the copied array. If bigger than arr, the additional fields will be zeros.
 //Example:
 int[] a = {1,2,3};
@@ -36,6 +41,8 @@ Arrays.asList(...)		// Transform an array into a List
  * MATH
  */
 Math.random()		//returns random float between 0 and 1 (not included)
+Math.floor()
+Math.ceil()
 
 Integer.MAX_VALUE;
 Integer.MIN_VALUE;
