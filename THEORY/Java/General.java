@@ -1,3 +1,4 @@
+
 /****************
  * ARRAYS
  */
@@ -50,7 +51,6 @@ Integer.MIN_VALUE;
 //LENGTH
 .length 	//can be used for int[], double[], String[] to know the length of the ARRAYS!
 .length() 	//can be used for String, StringBuilder, etc 
-
 
 
 /**************

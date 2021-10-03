@@ -2,7 +2,7 @@
 int quickSelect(int[] arr, int k) {
 	if(k < 1 || k > arr.length()) return -1;
 
-	int randInt = (in) Math.random()*arr.length();
+	int randInt = (int) Math.random()*arr.length();
 	int pivot = arr[randInt];
 
 	List lower = new ArrayList();

@@ -1,6 +1,6 @@
 int binarySearch(int[] arr, int x) {
 	int left = 0;
-	int right = arr.length() - 1;
+	int right = arr.length - 1;
 
 	while(left<=right) {
 		int mid = (left+right)/2;

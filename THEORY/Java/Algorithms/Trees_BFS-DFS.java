@@ -56,14 +56,12 @@ public class Tree {
 			}
 		}
 	}
-
 }
-
 
 //For a Binary Search Tree (BST), it's even simpler
 public class BST {
 
-	//We define the class as static so that we can instanciate it inside BST
+	//We define the class as static so that we can instantiate it inside BST
 	static class Node {
 		int label;
 		Node left, right;
