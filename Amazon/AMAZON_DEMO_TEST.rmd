@@ -1,0 +1,6 @@
+AMAZON DEMO TEST:
+
+1. Parameters: Array of zeros and ones; Number of days to run function. 
+   After each day, for each element i in array, if neighbors are both 1 or 0, it will be 0 on next day.
+   Edges: consider as if elements of index -1 and n are value 0.
+2. Find GCD of an array
